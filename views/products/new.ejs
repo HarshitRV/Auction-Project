@@ -14,10 +14,27 @@
         <input type="text" name="product[description]" id="description">
     </div>
     <div>
-        <label for="base_price">Base Price</label>
+        <label for="basePrice">Base Price</label>
     </div>
     <div>
-        <input type="number" name="product[base_price]" step="any" id="base_price">
+        <input type="number" name="product[basePrice]" step="any" id="basePrice">
+    </div>
+    <div>
+        <label for="images">Images</label>
+    </div>
+    <div>
+        <input type="text" name="product[images]" id="">
+    </div>
+    <div>
+        <label for="duration">Duration</label>
+    </div>
+    <div>
+        <select name="product[duration]" id="duration">
+            <option value="3">3 day</option>
+            <option value="5">5 day</option>
+            <option value="7">7 day</option>
+            <option value="7">10 day</option>
+        </select>
     </div>
     <div>
         <label for="category">Select Category</label>
@@ -31,12 +48,6 @@
             <option value="collectible">Collectible</option>
             <option value="other">Other</option>
         </select>
-    </div>
-    <div>
-        <label for="images">Add Image</label>
-    </div>
-    <div>
-        <input type="text" name="product[images]" id="">
     </div>
     <div>
         <button type="submit">Put this up for bidding</button>

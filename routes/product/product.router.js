@@ -1,6 +1,19 @@
+/**
+ * Node module imports
+ */
 const {
     Router
 } = require("express");
+
+/**
+ * Middleware Imports
+ */
+const protect = require("../../middlewares/protect")
+const role = require("../../middlewares/role")
+
+/**
+ * Controller imports
+ */
 const {
     getAllProducts,
     getOneProduct
@@ -9,17 +22,18 @@ const {
     addNewProduct,
     editProduct,
     deleteProduct
-} = require("../../controllers/product/auth.controller")
+} = require("../../controllers/product/auth.controller");
+const { ROLES } = require("../../middlewares/role");
 
 const ProductRouter = Router();
 
 
 ProductRouter.route('/products')
     .get(getAllProducts)
-    .post(addNewProduct)
+    .post(protect, addNewProduct)
 
 ProductRouter.route('/products/new')
-    .get((req, res) => {
+    .get(protect, (req, res) => {
         res.render('products/new');
     })
 

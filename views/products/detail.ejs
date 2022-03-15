@@ -13,8 +13,7 @@
 <h3>Category</h3>
 <p><%= product.category %> </p>
 <h3>Base Price</h3>
-<p> $ <%= product.base_price %> </p>
-
-<% if (product.user){ %>
+<p> Rs <%= product.basePrice %> </p>
+<h3>Duration</h3>
+<p><%= product.duration %> </p>
 <h4>Posted by <a href="/users/<%= product.user._id %>"><%= product.user.firstName %> </a></h4>
-<% } %> 

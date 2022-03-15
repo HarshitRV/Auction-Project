@@ -10,7 +10,7 @@ module.exports.getAllProducts = catchAsync(async (req, res) => {
 
 module.exports.getOneProduct = catchAsync(async (req, res) => {
     const product = await Product.findById(req.params.id).populate('user');
-    res.render('products/product', {
+    res.render('products/detail', {
         product
     });
 })

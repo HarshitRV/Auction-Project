@@ -20,10 +20,6 @@ const productSchema = new Schema({
     type: String,
     trim: true,
   }],
-  startTime: {
-    type: String,
-    required: true,
-  },
   duration: {
     type: Number,
     enum: [3, 5, 7, 10], // numbers in days
@@ -40,6 +36,9 @@ const productSchema = new Schema({
       ref: 'User',
       required: true
   }
+},
+{
+  timestamps: true
 })
 
 const Product = mongoose.model('Product', productSchema)

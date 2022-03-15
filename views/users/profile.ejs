@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %> 
 
-<h1>Dashboard</h1>
+<h1>Profile</h1>
 <hr>
 <img style="width: 12rem;" src="<%= user.avatar %> " alt="">
 <h2>Full Name</h2>
@@ -9,12 +9,10 @@
 <h3><%= user.email %></h3>
 <h2>DOB</h2>
 <h3><%= user.dob %></h3> 
-<h2>Password</h2>
-<h3><%= user.password %></h3>
-<a href="/users/<%= user._id %>/edit">Edit</a>
-
-<form action="/users/<%= user._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
+<a href="/products/new">Post Listing</a>
+<a href="/users/<%= user._id %>/edit">Edit Profile</a>
+<form action="/users/delete?_method=DELETE" method="POST">
+    <button type="submit">Delete Account</button>
 </form>
 <a href="/users">Home</a>
 <a href="/users/logout">Logout</a>

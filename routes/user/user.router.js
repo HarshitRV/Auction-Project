@@ -27,7 +27,8 @@ const User = require("../../models/user.model");
  */
 const {
   getAllUsers,
-  getProfile
+  getProfile,
+  getUser
 } = require("../../controllers/user/user.controller")
 const {
   registerUser,
@@ -90,6 +91,9 @@ UserRouter.route('/users/profile')
     await User.findByIdAndDelete(req.params.id);
     res.redirect('/users');
   }))
+
+UserRouter.route('/users/:id')
+  .get(getUser)
 
 UserRouter.route('/users/:id/edit')
   .get(catchAsync(async (req, res) => {
